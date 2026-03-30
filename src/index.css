@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply m-0 min-h-full w-full bg-ink text-bone;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply box-border;
+    cursor: none;
+  }
+}
+
+.noise-overlay {
+  background-image: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.06), transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.04), transparent 40%),
+    linear-gradient(160deg, #0b0b0b 0%, #050505 30%, #0d0d0d 70%, #050505 100%);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+  color: transparent;
+}
+
+.menu-panel-blur {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(0, 0, 0, 0.2) 100%);
+  backdrop-filter: blur(48px) saturate(180%);
+}
+
+.cursor-circle,
+.cursor-dot {
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.cursor-circle {
+  border: 1.6px solid #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.26);
+}
+
+.cursor-dot {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.44);
+}
+
+.cursor-theme-dark .cursor-circle {
+  border-color: #101218;
+  box-shadow: 0 0 16px rgba(16, 18, 24, 0.26);
+}
+
+.cursor-theme-dark .cursor-dot {
+  background: #101218;
+  box-shadow: 0 0 9px rgba(16, 18, 24, 0.35);
+}
+
+.loader-word-slot {
+  isolation: isolate;
+}
+
+.loader-word-item {
+  opacity: 0;
+  transform: translateY(42%);
+  animation: loader-word-cycle 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes loader-word-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(42%);
+  }
+
+  8%,
+  28% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  40%,
+  100% {
+    opacity: 0;
+    transform: translateY(-38%);
+  }
+}
+
