@@ -266,10 +266,7 @@ function App() {
         <ServicesSection />
         <SkillsSection />
         <ExperienceSection />
-        <InteractiveSection
-          onCursorEnter={handleCursorEnter}
-          onCursorLeave={handleCursorLeave}
-        />
+        <InteractiveSection />
         <ContactSection />
         <FooterSection />
       </main>
