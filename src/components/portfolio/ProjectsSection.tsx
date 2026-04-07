@@ -8,6 +8,7 @@ import type { Project } from "./types";
 import ideasosImg from "../../assets/Ideasos.png";
 import gtaImg from "../../assets/gta.png";
 import gymImg from "../../assets/gym.png";
+import goldImg from "../../assets/gold.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,18 +21,18 @@ const projects: Project[] = [
     tags: ["React", "AI", "Dashboard"],
   },
   {
+    title: "Gold Book",
+    subtitle: "Modern Gold Business Management",
+    image: goldImg,
+    link: "https://goldbook.netlify.app",
+    tags: ["React 19", "Tailwind", "Dashboard", "Supabase"],
+  },
+  {
     title: "GTAVI Landing",
     subtitle: "Immersive gaming promotional site",
     image: gtaImg,
     link: "https://gta-landing.netlify.app",
     tags: ["GSAP", "Three.js", "UI"],
-  },
-  {
-    title: "Destinaro",
-    subtitle: "Smart travel workflow builder",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80",
-    link: "https://destinaro.co.in",
-    tags: ["Frontend", "Maps API", "SaaS"],
   },
   {
     title: "Fitclub",
