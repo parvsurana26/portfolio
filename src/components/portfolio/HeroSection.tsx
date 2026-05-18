@@ -22,7 +22,6 @@ export function HeroSection({
 
   useEffect(() => {
     if (!loadingComplete) {
-      setAnimatedTagline(TAGLINE_TEXT);
       return;
     }
 
@@ -67,7 +66,7 @@ export function HeroSection({
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden border-b border-white/10 bg-black"
+      className="relative min-h-[100svh] overflow-hidden border-b border-white/10 bg-black"
       onMouseEnter={() => onCursorEnter("Explore")}
       onMouseLeave={onCursorLeave}
     >
@@ -76,7 +75,7 @@ export function HeroSection({
         loop
         muted
         playsInline
-        className="hero-video absolute inset-0 z-0 h-full w-full object-cover opacity-50 mix-blend-lighten"
+        className="hero-video absolute inset-0 z-0 h-full w-full object-cover opacity-45 mix-blend-lighten md:opacity-50"
         src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4"
       />
       
@@ -92,9 +91,9 @@ export function HeroSection({
       <div className="hero-grid-overlay pointer-events-none absolute inset-0 z-[1] opacity-35 [background-image:linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:78px_78px]" />
 
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-8 z-10 text-center"
+        className="pointer-events-none absolute inset-x-0 bottom-6 z-10 px-5 text-center sm:px-6 md:bottom-8"
       >
-        <p className="hero-tagline text-[0.72rem] uppercase tracking-[0.28em] text-white/55">{animatedTagline}</p>
+        <p className="hero-tagline mx-auto max-w-[30rem] text-[0.62rem] uppercase leading-relaxed tracking-[0.2em] text-white/60 sm:text-[0.72rem] sm:tracking-[0.28em]">{animatedTagline}</p>
       </div>
     </section>
   );

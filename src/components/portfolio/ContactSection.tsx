@@ -40,7 +40,7 @@ export function ContactSection() {
     <section
       id="contact"
       data-scroll-section
-      className="border-t border-black/10 bg-white px-6 py-24 text-black md:px-12 md:py-32"
+      className="border-t border-black/10 bg-white px-5 py-20 text-black sm:px-6 md:px-12 md:py-32"
     >
       <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-start">
         <div>
@@ -58,7 +58,7 @@ export function ContactSection() {
 
         <form 
           onSubmit={handleSubmit}
-          className="space-y-5 rounded-2xl border border-black/20 bg-white p-6 md:p-8"
+          className="space-y-5 rounded-xl border border-black/20 bg-white p-5 sm:p-6 md:rounded-2xl md:p-8"
         >
           {/* FormSubmit Config */}
           <input type="hidden" name="_subject" value="New Inquiry from Portfolio" />
@@ -68,27 +68,27 @@ export function ContactSection() {
           <input
             name="name"
             required
-            className="w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.16em] text-black placeholder:text-black/35 focus:border-black focus:outline-none"
+            className="w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.12em] text-black placeholder:text-black/35 focus:border-black focus:outline-none sm:tracking-[0.16em]"
             placeholder="Your Name"
             type="text"
           />
           <input
             name="email"
             required
-            className="w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.16em] text-black placeholder:text-black/35 focus:border-black focus:outline-none"
+            className="w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.12em] text-black placeholder:text-black/35 focus:border-black focus:outline-none sm:tracking-[0.16em]"
             placeholder="Email"
             type="email"
           />
           <textarea
             name="message"
             required
-            className="min-h-[140px] w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.16em] text-black placeholder:text-black/35 focus:border-black focus:outline-none"
+            className="min-h-[140px] w-full border-b border-black/25 bg-transparent px-0 py-3 text-sm uppercase tracking-[0.12em] text-black placeholder:text-black/35 focus:border-black focus:outline-none sm:tracking-[0.16em]"
             placeholder="Project Brief"
           />
           <MagneticElement strength={0.2} className="w-full mt-4">
             <button
               disabled={status === "submitting" || status === "success"}
-              className={`w-full rounded-full border px-6 py-4 text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-500 shadow-xl ${
+              className={`w-full rounded-full border px-4 py-4 text-xs font-bold uppercase leading-relaxed tracking-[0.14em] shadow-xl transition-all duration-500 sm:px-6 sm:tracking-[0.2em] md:text-sm ${
                 status === "success" 
                   ? "bg-green-500 text-white border-green-500 shadow-[0_0_30px_rgba(34,197,94,0.4)] pointer-events-none" 
                   : status === "submitting"
@@ -101,7 +101,7 @@ export function ContactSection() {
             >
               {status === "idle" && "Transmit Inquiry"}
               {status === "submitting" && "Establishing Link..."}
-              {status === "success" && "Transmission Successful ✓"}
+              {status === "success" && "Transmission Successful"}
               {status === "error" && "Link Failed - Retry"}
             </button>
           </MagneticElement>

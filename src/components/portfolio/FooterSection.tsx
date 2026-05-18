@@ -42,10 +42,10 @@ export function FooterSection() {
   }, []);
 
   return (
-    <footer data-scroll-section className="relative overflow-hidden border-t border-white/10 bg-[#050505] px-6 pt-24 pb-8 md:px-12 md:pt-32">
+    <footer data-scroll-section className="relative overflow-hidden border-t border-white/10 bg-[#050505] px-5 pb-8 pt-20 sm:px-6 md:px-12 md:pt-32">
       
       {/* Top Grid: Links and Info */}
-      <div className="mb-24 flex flex-col justify-between gap-16 md:mb-32 md:flex-row md:gap-8 relative z-10 w-full max-w-[1400px] mx-auto">
+      <div className="relative z-10 mx-auto mb-20 flex w-full max-w-[1400px] flex-col justify-between gap-12 md:mb-32 md:flex-row md:gap-8">
         
         <div className="flex flex-col gap-6 max-w-sm">
           <h3 className="text-xl font-display font-bold uppercase text-white/90">
@@ -64,7 +64,7 @@ export function FooterSection() {
           </MagneticElement>
         </div>
 
-        <div className="flex gap-16 md:gap-24">
+        <div className="grid grid-cols-2 gap-8 sm:flex sm:gap-16 md:gap-24">
           <div className="flex flex-col gap-5">
             <h4 className="mb-2 text-[10px] font-black uppercase tracking-[0.3em] text-white/30">
               Socials
@@ -102,7 +102,7 @@ export function FooterSection() {
       </div>
 
       {/* Massive Marquee Divider */}
-      <div className="relative z-0 w-full border-b border-t border-white/10 py-6 mb-6 overflow-hidden">
+      <div className="relative z-0 mb-6 w-full overflow-hidden border-b border-t border-white/10 py-5 md:py-6">
         {/* The wrapper that slides up on scroll */}
         <div ref={textRef} className="opacity-0">
           
@@ -111,26 +111,26 @@ export function FooterSection() {
             
             {/* Set 1 */}
             <div className="flex items-center gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-8 md:pr-16">
-              <h1 className="font-display text-[12vw] md:text-[15vw] leading-[0.8] font-black uppercase tracking-tighter text-white select-none">
+              <h1 className="select-none font-display text-[14vw] font-black uppercase leading-[0.8] tracking-normal text-white md:text-[15vw]">
                 PARV SURANA
               </h1>
-              <span className="text-[4vw] md:text-[6vw] text-white/20 select-none">✦</span>
-              <h1 className="font-display text-[12vw] md:text-[15vw] leading-[0.8] font-black uppercase tracking-tighter text-transparent select-none" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}>
+              <span className="select-none text-[4vw] text-white/20 md:text-[6vw]">*</span>
+              <h1 className="select-none font-display text-[14vw] font-black uppercase leading-[0.8] tracking-normal text-transparent md:text-[15vw]" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}>
                 CREATIVE DEVELOPER
               </h1>
-              <span className="text-[4vw] md:text-[6vw] text-white/20 select-none">✦</span>
+              <span className="select-none text-[4vw] text-white/20 md:text-[6vw]">*</span>
             </div>
 
             {/* Set 2 (Exact Duplicate for Seamless Loop) */}
             <div className="flex items-center gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-8 md:pr-16">
-              <h1 className="font-display text-[12vw] md:text-[15vw] leading-[0.8] font-black uppercase tracking-tighter text-white select-none">
+              <h1 className="select-none font-display text-[14vw] font-black uppercase leading-[0.8] tracking-normal text-white md:text-[15vw]">
                 PARV SURANA
               </h1>
-              <span className="text-[4vw] md:text-[6vw] text-white/20 select-none">✦</span>
-              <h1 className="font-display text-[12vw] md:text-[15vw] leading-[0.8] font-black uppercase tracking-tighter text-transparent select-none" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}>
+              <span className="select-none text-[4vw] text-white/20 md:text-[6vw]">*</span>
+              <h1 className="select-none font-display text-[14vw] font-black uppercase leading-[0.8] tracking-normal text-transparent md:text-[15vw]" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}>
                 CREATIVE DEVELOPER
               </h1>
-              <span className="text-[4vw] md:text-[6vw] text-white/20 select-none">✦</span>
+              <span className="select-none text-[4vw] text-white/20 md:text-[6vw]">*</span>
             </div>
 
           </div>
@@ -139,7 +139,7 @@ export function FooterSection() {
       </div>
 
       {/* Bottom Legal / Quote Bar */}
-      <div className="flex flex-col items-center justify-between gap-4 sm:gap-6 opacity-60 md:flex-row md:items-end w-full max-w-[1400px] mx-auto">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 opacity-60 sm:gap-6 md:flex-row md:items-end">
         <div className="flex gap-2 items-center">
            <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
            <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-white">
@@ -152,7 +152,7 @@ export function FooterSection() {
         </p>
 
         <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-          © {new Date().getFullYear()} — India
+          (c) {new Date().getFullYear()} - India
         </p>
       </div>
       

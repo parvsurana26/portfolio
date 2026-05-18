@@ -71,8 +71,8 @@ export function SkillsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" data-scroll-section className="overflow-hidden border-t border-white/10 bg-black pt-24 pb-32">
-      <div className="mb-16 px-6 md:px-12">
+    <section ref={sectionRef} id="skills" data-scroll-section className="overflow-hidden border-t border-white/10 bg-black pb-24 pt-20 md:pb-32 md:pt-24">
+      <div className="mb-12 px-5 sm:px-6 md:mb-16 md:px-12">
         <h2 className="font-display text-[clamp(2.2rem,8vw,7rem)] font-extrabold uppercase leading-[0.9] text-white">
           Capabilities
         </h2>
@@ -87,7 +87,7 @@ export function SkillsSection() {
           {row1Skills.map((skill, index) => (
             <div
               key={`${skill}-${index}`}
-              className={`mx-2 md:mx-3 flex items-center justify-center rounded-full border px-4 py-2 md:px-8 md:py-4 font-display text-xl font-bold uppercase tracking-wide sm:text-2xl md:text-4xl lg:text-6xl ${
+            className={`mx-1.5 flex items-center justify-center rounded-full border px-4 py-2 font-display text-lg font-bold uppercase tracking-wide sm:text-2xl md:mx-3 md:px-8 md:py-4 md:text-4xl lg:text-6xl ${
                 index % 2 === 0
                   ? "border-white/20 text-white"
                   : "border-transparent text-stroke"
@@ -103,7 +103,7 @@ export function SkillsSection() {
           {row2Skills.map((skill, index) => (
             <div
               key={`${skill}-${index}`}
-              className={`mx-2 md:mx-3 flex items-center justify-center rounded-full border px-4 py-2 md:px-8 md:py-4 font-display text-xl font-bold uppercase tracking-wide sm:text-2xl md:text-4xl lg:text-6xl ${
+            className={`mx-1.5 flex items-center justify-center rounded-full border px-4 py-2 font-display text-lg font-bold uppercase tracking-wide sm:text-2xl md:mx-3 md:px-8 md:py-4 md:text-4xl lg:text-6xl ${
                 index % 2 !== 0
                   ? "border-white/20 text-white"
                   : "border-transparent text-stroke"

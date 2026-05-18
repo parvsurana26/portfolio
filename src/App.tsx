@@ -48,8 +48,6 @@ function App() {
 
   useEffect(() => {
     if (loading) {
-      setCursorVisible(false);
-      setCursorActive(false);
       return;
     }
 
@@ -251,7 +249,7 @@ function App() {
 
       <CustomCursor
         visible={cursorVisible && !loading}
-        active={cursorActive}
+        active={cursorActive && !loading}
         text={cursorText}
       />
 

@@ -5,14 +5,13 @@ import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SCRAMBLE_CHARS = "0123456789!<>-_\\/[]{}—=+*^?#";
+const SCRAMBLE_CHARS = "0123456789!<>-_\\/[]{}-=+*^?#";
 
 function ScrambleText({ text, isHovered }: { text: string; isHovered: boolean }) {
   const [displayText, setDisplayText] = useState(text);
 
   useEffect(() => {
     if (!isHovered) {
-      setDisplayText(text);
       return;
     }
 
@@ -40,7 +39,7 @@ function ScrambleText({ text, isHovered }: { text: string; isHovered: boolean })
     return () => clearInterval(interval);
   }, [isHovered, text]);
 
-  return <>{displayText}</>;
+  return <>{isHovered ? displayText : text}</>;
 }
 
 const timeline = [
@@ -70,7 +69,7 @@ const timeline = [
     role: "Frontend & Digital Marketing",
     year: "2025",
     points: [
-      "Built the company’s travel website using HTML, CSS, and JavaScript with responsive design and booking features.",
+      "Built the company's travel website using HTML, CSS, and JavaScript with responsive design and booking features.",
       "Worked on SEO optimization and successfully improved Google search rankings.",
       "Contributed to user experience, visual design, and keyword-based content targeting."
     ],
@@ -148,12 +147,12 @@ export function ExperienceSection() {
   }, []);
 
   return (
-    <section ref={containerRef} id="experience" data-scroll-section className="border-t border-black/10 bg-white px-6 py-24 md:px-12 md:py-32">
+    <section ref={containerRef} id="experience" data-scroll-section className="border-t border-black/10 bg-white px-5 py-20 sm:px-6 md:px-12 md:py-32">
       <h2 className="font-display text-[clamp(2.2rem,8vw,7rem)] font-extrabold uppercase leading-[0.9] text-black">
         Experience
       </h2>
 
-      <div className="relative mt-16 pl-8 md:pl-16">
+      <div className="relative mt-12 pl-6 md:mt-16 md:pl-16">
         <div className="absolute left-[3px] top-0 h-full w-[1px] bg-black/10" />
         <div ref={lineRef} className="absolute left-[3px] top-0 h-full w-[1.5px] origin-top bg-black" />
 
@@ -166,12 +165,12 @@ export function ExperienceSection() {
             className="experience-block group relative mb-10 last:mb-0"
           >
             {/* Dot glow and dot */}
-            <div className="absolute -left-[35px] top-2.5 flex h-[10px] w-[10px] items-center justify-center md:-left-[61.5px]">
+            <div className="absolute -left-[27px] top-2.5 flex h-[10px] w-[10px] items-center justify-center md:-left-[61.5px]">
               <span className="absolute h-full w-full rounded-full bg-black/20 blur-md transition-all duration-500 group-hover:scale-[3] group-hover:bg-black/40" />
               <span className="timeline-dot absolute h-[10px] w-[10px] rounded-full bg-black ring-[5px] ring-white transition-transform duration-500 group-hover:scale-125" />
             </div>
 
-            <div className="rounded-2xl border border-transparent p-4 sm:p-6 transition-all duration-500 hover:-translate-y-1 hover:border-black/5 hover:bg-black/[0.02] hover:shadow-xl hover:shadow-black/[0.03] md:-mx-6 md:p-8">
+            <div className="rounded-xl border border-transparent py-3 pl-3 pr-0 transition-all duration-500 hover:-translate-y-1 hover:border-black/5 hover:bg-black/[0.02] hover:shadow-xl hover:shadow-black/[0.03] sm:p-6 md:-mx-6 md:rounded-2xl md:p-8">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div>
                   <h3 className="font-display text-2xl sm:text-3xl font-semibold uppercase text-black transition-colors duration-500 md:text-5xl">
@@ -182,17 +181,17 @@ export function ExperienceSection() {
                   </p>
                 </div>
                 <div className="flex-shrink-0">
-                  <span className="font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black text-black/20 transition-colors duration-500 group-hover:text-black tracking-tighter uppercase whitespace-nowrap">
+                  <span className="whitespace-nowrap font-display text-xl font-black uppercase tracking-normal text-black/20 transition-colors duration-500 group-hover:text-black sm:text-2xl md:text-4xl lg:text-5xl">
                     <ScrambleText text={item.year} isHovered={hoveredIndex === index} />
                   </span>
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-4 text-black/70">
+              <ul className="mt-5 space-y-3 text-black/70 sm:mt-6 sm:space-y-4">
                 {item.points.map((point) => (
-                  <li key={`${index}-${point}`} className="group/item flex max-w-3xl items-start gap-4 text-sm leading-relaxed transition-colors hover:text-black">
-                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 -translate-x-2 text-black/0 transition-all duration-300 group-hover/item:translate-x-0 group-hover/item:text-black" />
-                    <span className="-ml-6 transition-transform duration-300 group-hover/item:translate-x-2">{point}</span>
+                  <li key={`${index}-${point}`} className="group/item flex max-w-3xl items-start gap-3 text-sm leading-relaxed transition-colors hover:text-black sm:gap-4">
+                    <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-black/50 transition-all duration-300 sm:-translate-x-2 sm:text-black/0 sm:group-hover/item:translate-x-0 sm:group-hover/item:text-black" />
+                    <span className="transition-transform duration-300 sm:-ml-6 sm:group-hover/item:translate-x-2">{point}</span>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 const dragItems = [
@@ -12,11 +12,6 @@ const dragItems = [
 
 export function InteractiveSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Simple hardcoded scatter array based on viewport quadrants to avoid clumping
   const getInitialPosition = (index: number) => {
@@ -35,30 +30,30 @@ export function InteractiveSection() {
     <section 
       id="play" 
       data-scroll-section 
-      className="border-t border-white/10 relative h-[100svh] w-full overflow-hidden bg-black flex items-center justify-center cursor-crosshair"
+      className="relative flex h-[100svh] w-full cursor-crosshair items-center justify-center overflow-hidden border-t border-white/10 bg-black"
     >
       {/* Massive Background Typography */}
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none opacity-20">
         <h2 
-          className="font-display text-[15vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent" 
+          className="font-display text-[18vw] font-black uppercase leading-[0.85] tracking-normal text-transparent md:text-[15vw]"
           style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)" }}
         >
           DRAG &
         </h2>
-        <h2 className="font-display text-[15vw] font-black uppercase leading-[0.85] tracking-tighter text-white">
+        <h2 className="font-display text-[18vw] font-black uppercase leading-[0.85] tracking-normal text-white md:text-[15vw]">
           THROW
         </h2>
       </div>
 
-      <div className="absolute top-12 text-center w-full pointer-events-none z-10">
-        <p className="text-white/60 tracking-[0.4em] text-xs md:text-sm uppercase font-bold animate-pulse">
+      <div className="pointer-events-none absolute top-12 z-10 w-full px-5 text-center">
+        <p className="animate-pulse text-[10px] font-bold uppercase leading-relaxed tracking-[0.28em] text-white/60 md:text-sm md:tracking-[0.4em]">
           Grab the shapes and throw them
         </p>
       </div>
 
       {/* Physics Container Bounds */}
       <div ref={containerRef} className="absolute inset-0 p-4 md:p-12 z-20">
-        {mounted && dragItems.map((item, index) => {
+        {dragItems.map((item, index) => {
           const pos = getInitialPosition(index);
           return (
             <motion.div

@@ -55,9 +55,9 @@ export function ServicesSection() {
       ref={containerRef}
       id="services"
       data-scroll-section
-      className="border-t border-black/10 bg-white px-6 py-24 md:px-12 md:py-32"
+      className="border-t border-black/10 bg-white px-5 py-20 sm:px-6 md:px-12 md:py-32"
     >
-      <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div className="mb-14 flex flex-col justify-between gap-8 md:mb-20 md:flex-row md:items-end">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-black/40 mb-4">Capabilities</p>
           <h2 className="font-display text-[clamp(2.5rem,7vw,6rem)] font-extrabold uppercase leading-[0.9] text-black">
@@ -73,7 +73,7 @@ export function ServicesSection() {
         {services.map((service, index) => (
           <div
             key={service.title}
-            className="service-row group relative flex flex-col md:flex-row border-b border-black/10 py-8 md:py-16 transition-colors duration-500 hover:bg-black/[0.02]"
+            className="service-row group relative flex flex-col border-b border-black/10 py-8 transition-colors duration-500 hover:bg-black/[0.02] md:flex-row md:py-16"
           >
             {/* Index Number */}
             <div className="md:w-1/6 mb-2 md:mb-0">
@@ -83,11 +83,10 @@ export function ServicesSection() {
             </div>
             
             {/* Title & Desc */}
-            <div className="md:w-3/6 pr-4 md:pr-8">
-               <h3 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black uppercase text-black tracking-tighter transition-transform duration-500 group-hover:translate-x-4">
+            <div className="pr-0 md:w-3/6 md:pr-8">
+               <h3 className="font-display text-2xl font-black uppercase tracking-normal text-black transition-transform duration-500 sm:text-3xl md:text-5xl md:group-hover:translate-x-4 lg:text-7xl">
                  {service.title}
                </h3>
-               {/* Description slides drop down on hover for larger screens, normal on mobile */}
                <p className="mt-6 text-xs md:text-sm text-black/50 tracking-widest leading-relaxed md:pr-12 md:opacity-0 md:-translate-y-4 md:transition-all md:duration-500 md:group-hover:opacity-100 md:group-hover:translate-y-0">
                  {service.desc}
                </p>
